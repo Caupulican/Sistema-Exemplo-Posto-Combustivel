@@ -8,7 +8,7 @@
 ## Como testar
 - Instale a dependência no Delphi
 - Crie o banco de dados usando o arquivo presente em Model\Database\Database.sql. Edite o arquivo para definir a localização da dll x32 do Firebird e aonde será criado o banco de dados. Por padrão será criado em C:\DB.
-- Ao compilar o projeto será criada uma pasta bin, nesta pasta crie um arquivo ini "DFP.ini" com uma seção "Config", caminho do banco em "DBPath", usuário do banco "DBuser" e senha do banco "DBPass".
+- Ao compilar o projeto crie um arquivo ini "DFP.ini" com uma seção "Config", caminho do banco em "DBPath", usuário do banco "DBuser" e senha do banco "DBPass".
 
 
 ## Funcionalidades
