@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{8E49CFD4-54F2-4E89-A12B-EFF93397BAFF}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="DFP.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="DFPTests.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="DFP">
+        <MSBuild Projects="DFP.dproj"/>
+    </Target>
+    <Target Name="DFP:Clean">
+        <MSBuild Projects="DFP.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DFP:Make">
+        <MSBuild Projects="DFP.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="DFPTests">
+        <MSBuild Projects="DFPTests.dproj"/>
+    </Target>
+    <Target Name="DFPTests:Clean">
+        <MSBuild Projects="DFPTests.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DFPTests:Make">
+        <MSBuild Projects="DFPTests.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="DFP;DFPTests"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="DFP:Clean;DFPTests:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="DFP:Make;DFPTests:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
