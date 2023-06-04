@@ -1,37 +1,33 @@
-# Sistema Exemplo Posto Combustivel
- Sistema de exemplo para controle de posto de combustível tratando-se apenas de um MVP (Minimum Viable Product).
- 
- Feito em Delphi 10.4 x32, utilizando Firebird como banco de dados e Fortes Report como gerador de relatórios.
+# Fuel Station Example System
+An example system for fuel station control, focusing on being a Minimum Viable Product (MVP).
 
+Developed using Delphi 10.4 x32, utilizing Firebird 3 as the database and Fortes Report as the report generator.
 
+## How to test
+- Install the dependency in Delphi.
+- Create the database using the file found in Model\Database\Database.sql. Edit the file to specify the location of the Firebird x32 DLL and where the database will be created. By default, it will be created at C:\DB.
+- When compiling the project, create an "DFP.ini" file with a "Config" section, specifying the database path in "DBPath," the database user in "DBuser," and the database password in "DBPass."
 
-## Como testar
-- Instale a dependência no Delphi
-- Crie o banco de dados usando o arquivo presente em Model\Database\Database.sql. Edite o arquivo para definir a localização da dll x32 do Firebird e aonde será criado o banco de dados. Por padrão será criado em C:\DB.
-- Ao compilar o projeto crie um arquivo ini "DFP.ini" com uma seção "Config", caminho do banco em "DBPath", usuário do banco "DBuser" e senha do banco "DBPass".
+## Features
 
+- Tracks refueling operations conducted each day, identifying the pump used, the quantity of liters, and the amount fueled.
+- Calculates a tax on the fueled amount (fixed at 15% in this example).
+- Generates refueling reports with filtering options for date range and grouping by Date, Tank, and Pump used.
 
-## Funcionalidades
+## Dependencies
+- [Fortes Report CE](https://github.com/fortesinformatica/fortesreport-ce)
 
-- Controla os abastecimentos feitos durante cada dia, identificando a bomba utilizada, a quantidade de litros e o valor abastecido
-- Calcula um imposto sobre o valor abastecido (Fixo em 15% no exemplo)
-- Relatório de abastecimentos com filtagem de período e agrupamento por Data, Tanque e Bomba utilizada. 
-
-
-
-## Dependências
--  [Fortes Report Ce](https://github.com/fortesinformatica/fortesreport-ce)
-## Arquitetura e Design aplicados
-- MVC 
-- SOLID 
+## Applied Architecture and Design
+- MVC (Model-View-Controller)
+- SOLID principles
 - Abstract Factory
 - Fluent Interfaces
-- ORM para abstrair a camada de banco e manipular os objetos
+- ORM (Object-Relational Mapping) for abstracting the database layer and manipulating objects
 - Unit Tests
-- RTTI
+- RTTI (Run-Time Type Information)
 - Generics
 - Helpers
 - Custom Exceptions
 - Interfaces
-- OOP
+- Object-Oriented Programming (OOP)
 - Clean Code
